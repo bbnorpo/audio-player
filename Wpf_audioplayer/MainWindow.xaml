@@ -7,14 +7,14 @@
         xmlns:local="clr-namespace:Wpf_audioplayer"
         
         mc:Ignorable="d"
-        Title="audioplayer" Height="720" Width="1280
-        " WindowStartupLocation="CenterScreen" Activated="MetroWindow_Activated">
+        Title="lyr" Height="720" Width="1280
+        " WindowStartupLocation="CenterScreen" Activated="MetroWindow_Activated" Controls:ControlsHelper.ContentCharacterCasing="Lower" MinWidth="1280" MinHeight="720" Icon="Resources/Icons/song_icon.png">
     
     <Grid Margin="2">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
             <ColumnDefinition />
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
@@ -33,10 +33,10 @@
             </MenuItem>
         </Menu>
         <Separator Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="{DynamicResource AccentColorBrush}" Margin="0" BorderThickness="1"/>
-        <Button Grid.Row="2" Margin="0,3" Padding="0" Click="Button_Click" Controls:ControlsHelper.ContentCharacterCasing="Normal">
-            <Label>Set Root Folder</Label>
+        <Button Grid.Row="2" Margin="4,3" Padding="0" Click="Button_Click" Style="{StaticResource AccentedSquareButtonStyle}" BorderThickness="0">
+            <Label Content="Set Music Library Root Folder"/>
         </Button>
-        <TreeView x:Name="tree_MediaLibrary" Margin="4,1" Grid.Row="3" Grid.RowSpan="2" BorderThickness="1" BorderBrush="{DynamicResource AccentColorBrush}">
+        <TreeView x:Name="tree_MediaLibrary" Margin="4,1" Grid.Row="3" Grid.RowSpan="2" BorderThickness="0" BorderBrush="{DynamicResource AccentColorBrush}">
             <TreeView.Resources>
                 <Style TargetType="{x:Type TreeViewItem}">
                     <Setter Property="HeaderTemplate">
@@ -58,6 +58,7 @@
                 </Style>
             </TreeView.Resources>
         </TreeView>
+        <DataGrid Grid.Column="1" Grid.Row="3" Margin="4,1" BorderThickness="1" BorderBrush="{DynamicResource AccentColorBrush}"/>
     </Grid>
     
 </Controls:MetroWindow>

@@ -22,12 +22,13 @@ namespace Wpf_audioplayer
     /// </summary>
     public partial class MainWindow
     {
-        private string defaultRoot = "G:/TEST";
+        private string startRoot = "G:/TEST";
         private string activeRoot = "G:/TEST";
 
         public void SetRootLibrary(string str)
         {
-            activeRoot = str;            
+            activeRoot = str;
+            startRoot = activeRoot;
         }
         public string GetRootLibrary()
         {
@@ -36,14 +37,14 @@ namespace Wpf_audioplayer
 
         public MainWindow()
         {
-            SetRootLibrary(defaultRoot);
+            SetRootLibrary(startRoot);
             InitializeComponent();
             Loaded += MainWindow_Loaded;
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            SetRootLibrary(defaultRoot);
+            SetRootLibrary(startRoot);
         }
 
         private void MetroWindow_Activated(object sender, EventArgs e)
